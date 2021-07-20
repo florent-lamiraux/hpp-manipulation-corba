@@ -59,7 +59,7 @@ module hpp
         floatSeqSeq computeConfigList(in floatSeq q1, in floatSeq q2);
         //*hpp::core::vector_t _q1 = hpp::corbaServer::floatSeqToVector (q1);
         //*hpp::core::vector_t _q2 = hpp::corbaServer::floatSeqToVector (q2);
-        //*std::vector<boost::shared_ptr<Eigen::Matrix<double, -1, 1> > > res = getT()->computeConfigList (_q1, _q2);
+        //*std::vector<shared_ptr<Eigen::Matrix<double, -1, 1> > > res = getT()->computeConfigList (_q1, _q2);
         //*int s = res.size();
         //*int n = res[0]->rows(); // cols() == 1
         //*Eigen::Matrix<double, -1, -1> matrix;
