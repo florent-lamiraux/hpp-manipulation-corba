@@ -102,6 +102,9 @@ namespace hpp {
           virtual char* getHandlePositionInJoint (const char* handleName,
               ::hpp::Transform__out position);
 
+          virtual void setHandlePositionInJoint (const char* handleName,
+              const ::hpp::Transform_ position);
+
         private:
           ProblemSolverPtr_t problemSolver();
           Server* server_;

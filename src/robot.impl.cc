@@ -456,6 +456,22 @@ namespace hpp {
         }
       }
 
+      void Robot::setHandlePositionInJoint (const char* handleName,
+          const ::hpp::Transform_ position)
+      {
+	try {
+          DevicePtr_t robot = getRobotOrThrow (problemSolver());
+          HandlePtr_t handle = robot->handles.get (handleName);
+          if (!handle)
+            throw Error ("This handle does not exists.");
+          Transform3f t;
+          hppTransformToTransform3f (position, t);
+          handle->localPosition(t);
+	} catch (const std::exception& exc) {
+	  throw Error (exc.what ());
+        }
+      }
+
     } // namespace impl
   } // namespace manipulation
 } // namespace hpp

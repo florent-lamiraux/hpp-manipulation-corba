@@ -218,6 +218,10 @@ class Robot (Parent):
     def getHandlePositionInJoint (self, handleName):
         return self.client.manipulation.robot.getHandlePositionInJoint (handleName)
 
+    ## Set a given position to a handle in joint frame
+    def setHandlePositionInJoint (self, handleName, position):
+        self.client.manipulation.robot.setHandlePositionInJoint (handleName, position)
+
     ## \}
 
 from hpp.corbaserver.robot import StaticStabilityConstraintsFactory
