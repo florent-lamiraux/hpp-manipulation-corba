@@ -462,8 +462,9 @@ namespace hpp {
 	try {
           DevicePtr_t robot = getRobotOrThrow (problemSolver());
           HandlePtr_t handle = robot->handles.get (handleName);
+          std::string name_str(handleName);
           if (!handle)
-            throw Error ("This handle does not exists.");
+            throw std::invalid_argument ("Robot does not have any handle named " + name_str);
           Transform3f t;
           hppTransformToTransform3f (position, t);
           handle->localPosition(t);
